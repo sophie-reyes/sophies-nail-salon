@@ -140,13 +140,24 @@ body[data-theme="royal"]   { background: linear-gradient(160deg, #e6d9ff 0%, #f7
   padding: 2px 12px 6px; font-size: 12px; font-weight: 700; color: #a06a86;
 }
 .hud-sub .btn-pause-sm { margin-left: auto; padding: 4px 10px; font-size: 14px; min-height: 0; }
-.sophie-host { z-index: 1; position: relative; margin-top: 6px; }
+.sophie-host { z-index: 1; position: relative; margin-top: 6px; display: flex; align-items: center; justify-content: center; gap: 14px; }
 .sophie-host img { width: 92px; height: 92px; object-fit: contain; border-radius: 50%; background: #fff; border: 3px solid #ffd9e8; }
 .sophie-host .sophie-fallback { display: none; font-size: 72px; }
 .sophie-host.no-art .sophie-fallback { display: block; }
 .sophie-host.no-art img { display: none; }
+.tip-jar {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-decoration: none; background: #fff; border: 3px solid #ffd9e8; border-radius: 18px;
+  padding: 8px 14px; box-shadow: 0 4px 0 rgba(0,0,0,.08);
+  animation: tipjar-pulse 2.2s ease-in-out infinite;
+}
+.tip-jar:active { transform: scale(.93); animation: none; }
+.tip-jar-ico { font-size: 42px; line-height: 1; }
+.tip-jar-label { font-size: 12px; font-weight: bold; color: var(--pink-dark); margin-top: 4px; letter-spacing: 1px; }
+@keyframes tipjar-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
 .speech {
-  position: absolute; left: 100px; top: 0; background: #fff; border: 2px solid #ffd9e8;
+  position: absolute; left: 50%; transform: translateX(-50%); top: auto; bottom: calc(100% + 8px);
+  background: #fff; border: 2px solid #ffd9e8;
   border-radius: 14px; padding: 8px 12px; font-size: 14px; max-width: 220px; z-index: 3;
 }
 .stations { z-index: 1; display: flex; gap: 12px; justify-content: center; width: 100%; padding: 8px; flex-wrap: wrap; }
